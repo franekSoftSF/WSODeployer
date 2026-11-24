@@ -14,7 +14,7 @@ to it.
 |---|---|---|
 | `WSODeployer-server-X.Y.Z.zip` | **The server alone**: `server\docker-compose.yml`, `server\.env.example`, `server\scripts\run-linux.sh` and `run-windows.ps1`, the connector MSI and the technician app in `server\data\downloads`, the sample content in `content\` | the Docker host |
 | `WSODeployer-X.Y.Z.zip` | **The full admin package**: the server above, plus the scripts of the admin workstation (`client\`), of the domain agent / connector (`agent\`), the device engine (`engine\`) and the UEM console extension | the admin workstation (and the Docker host, if it is the same machine) |
-| `docker-compose.yml`, `.env.example` | The same two files on their own, to read before downloading anything | - |
+| `docker-compose.yml`, `env.example` | The same two files on their own (`env.example` is `server/.env.example`), to read before downloading anything | - |
 
 The server images are pulled by the scripts. You do not build anything:
 `ghcr.io/franeksoftsf/wsodeployer-api:X.Y.Z` and `ghcr.io/franeksoftsf/wsodeployer-nginx:X.Y.Z`, plus `postgres:17-alpine`.

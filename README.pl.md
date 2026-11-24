@@ -17,7 +17,7 @@ repozytorium.
 |---|---|
 | Serwer `WSODeployer-server-0.25.1.zip` | [Releases](../../releases) - `docker-compose.yml`, `.env.example`, `run-linux.sh` / `run-windows.ps1` (klucze, certyfikat TLS, hasło admina), przykładowa treść, MSI konektora i aplikacja technika |
 | Paczka administratora `WSODeployer-0.25.1.zip` | [Releases](../../releases) - serwer jak wyżej oraz skrypty stanowiska administratora, agenta domenowego i nośnika, silnik urządzenia |
-| `docker-compose.yml`, `.env.example` | [Releases](../../releases) - te same dwa pliki osobno |
+| `docker-compose.yml`, `env.example` | [Releases](../../releases) - te same dwa pliki osobno |
 | Obrazy serwera | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.1` i `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.1` - pobierają je skrypty serwera z paczki, nic nie budujesz |
 
 Uruchomiony serwer podaje swoją wersję pod `/api/health`.

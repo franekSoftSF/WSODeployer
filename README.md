@@ -16,7 +16,7 @@ private repository.
 |---|---|
 | Server `WSODeployer-server-0.25.1.zip` | [Releases](../../releases) - `docker-compose.yml`, `.env.example`, `run-linux.sh` / `run-windows.ps1` (keys, TLS certificate, admin password), sample content, connector MSI and technician app |
 | Admin package `WSODeployer-0.25.1.zip` | [Releases](../../releases) - the server above plus the scripts of the admin workstation, domain agent and boot media, and the device engine |
-| `docker-compose.yml`, `.env.example` | [Releases](../../releases) - the same two files on their own |
+| `docker-compose.yml`, `env.example` | [Releases](../../releases) - the same two files on their own |
 | Server images | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.1` and `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.1` - the server scripts of the package pull them, nothing to build |
 
 The running server reports its version at `/api/health`.

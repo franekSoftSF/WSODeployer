@@ -13,7 +13,7 @@ Wszystko jest w **Releases** publicznego repozytorium `franekSoftSF/WSODeployer`
 |---|---|---|
 | `WSODeployer-server-X.Y.Z.zip` | **Sam serwer**: `server\docker-compose.yml`, `server\.env.example`, `server\scripts\run-linux.sh` i `run-windows.ps1`, MSI konektora i aplikacja technika w `server\data\downloads`, przykładowa treść w `content\` | host z Dockerem |
 | `WSODeployer-X.Y.Z.zip` | **Pełna paczka administratora**: serwer jak wyżej oraz skrypty stanowiska administratora (`client\`), agenta domenowego / konektora (`agent\`), silnik urządzenia (`engine\`) i rozszerzenie konsoli UEM | stanowisko administratora (i host z Dockerem, jeśli to ta sama maszyna) |
-| `docker-compose.yml`, `.env.example` | Te same dwa pliki osobno, do przejrzenia przed pobraniem czegokolwiek | - |
+| `docker-compose.yml`, `env.example` | Te same dwa pliki osobno (`env.example` to `server/.env.example`), do przejrzenia przed pobraniem czegokolwiek | - |
 
 Obrazy serwera pobierają skrypty, nic nie budujesz:
 `ghcr.io/franeksoftsf/wsodeployer-api:X.Y.Z` i `ghcr.io/franeksoftsf/wsodeployer-nginx:X.Y.Z`, oraz `postgres:17-alpine`.
