@@ -14,8 +14,10 @@ private repository.
 
 | What | Where |
 |---|---|
-| Admin package `WSODeployer-0.25.0.zip` | [Releases](../../releases) - scripts of the admin workstation, domain agent and boot media, device engine, sample content, server start kit, connector MSI and technician app (`.sha256` next to it) |
-| Server images | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.0` and `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.0` - the server scripts of the package pull them, nothing to build |
+| Server `WSODeployer-server-0.25.1.zip` | [Releases](../../releases) - `docker-compose.yml`, `.env.example`, `run-linux.sh` / `run-windows.ps1` (keys, TLS certificate, admin password), sample content, connector MSI and technician app |
+| Admin package `WSODeployer-0.25.1.zip` | [Releases](../../releases) - the server above plus the scripts of the admin workstation, domain agent and boot media, and the device engine |
+| `docker-compose.yml`, `.env.example` | [Releases](../../releases) - the same two files on their own |
+| Server images | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.1` and `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.1` - the server scripts of the package pull them, nothing to build |
 
 The running server reports its version at `/api/health`.
 
@@ -23,6 +25,7 @@ The running server reports its version at `/api/health`.
 
 | Document | About |
 |---|---|
+| [Server setup](docs/server-setup.md) | **start here**: requirements (minimum / recommended), ports, step by step install on Linux or Windows (Docker Desktop), TLS certificate (self-signed or PFX), keys, folders and volumes, backup, first sign-in as `admin` |
 | [Installation](docs/installation.md) | step by step: server, admin workstation, content, domain agent, boot media, first VM |
 | [Server and web console](docs/server.md) | server scripts, TLS, console sign-in (Workspace ONE Access / Entra ID), Workspace ONE UEM REST API |
 | [Cloud Connector](docs/connector.md) | Windows service in the domain: Offline Domain Join, computer accounts |
@@ -38,7 +41,10 @@ documentation are examples.
 
 ## Requirements in short
 
-- Server: Docker (Linux or Windows with Linux containers); about 6 GB disk per Windows image and language for LAN copies.
+Details, minimum and recommended sizes: [server setup](docs/server-setup.md).
+
+- Server: Linux with Docker Engine, or Windows 10/11 with Docker Desktop (Linux containers); 2-4 vCPU, 4-8 GB RAM,
+  40-100 GB disk plus about 6 GB per Windows image and language kept in the LAN.
 - Admin workstation: Windows 10/11 or Server, PowerShell 5.1, Windows ADK + WinPE add-on (installed by the script).
 - Domain: a domain-joined Windows server for the connector (Offline Domain Join).
 - Workspace ONE UEM: Device Services host, Group ID, staging account; optional REST API OAuth client.

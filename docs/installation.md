@@ -68,6 +68,7 @@ Visual Studio subscription.
 - `secrets-dev\local-admin.txt` – user `admin` and its password for the web console (also printed at the end of the script).
 
 ## 1. Server
+Step by step with requirements, TLS certificate, keys, volumes and backup: [server-setup.md](server-setup.md). In short:
 `server\scripts\run-windows.ps1 [-Dev]` or `run-linux.sh [--dev]`, see [server/README.md](server.md). From the release
 package the scripts pull the released images (`docker compose pull`); in a clone of the repository they build them. The script always creates
 the console administrator `admin` and prints its password at the end. Sign in with it at `https://<server>/console` and

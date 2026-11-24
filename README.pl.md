@@ -15,8 +15,10 @@ repozytorium.
 
 | Co | Gdzie |
 |---|---|
-| Paczka administratora `WSODeployer-0.25.0.zip` | [Releases](../../releases) - skrypty stanowiska administratora, agenta domenowego i nośnika, silnik urządzenia, przykładowa treść, zestaw startowy serwera, MSI konektora i aplikacja technika (obok plik `.sha256`) |
-| Obrazy serwera | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.0` i `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.0` - pobierają je skrypty serwera z paczki, nic nie budujesz |
+| Serwer `WSODeployer-server-0.25.1.zip` | [Releases](../../releases) - `docker-compose.yml`, `.env.example`, `run-linux.sh` / `run-windows.ps1` (klucze, certyfikat TLS, hasło admina), przykładowa treść, MSI konektora i aplikacja technika |
+| Paczka administratora `WSODeployer-0.25.1.zip` | [Releases](../../releases) - serwer jak wyżej oraz skrypty stanowiska administratora, agenta domenowego i nośnika, silnik urządzenia |
+| `docker-compose.yml`, `.env.example` | [Releases](../../releases) - te same dwa pliki osobno |
+| Obrazy serwera | `docker pull ghcr.io/franeksoftsf/wsodeployer-api:0.25.1` i `ghcr.io/franeksoftsf/wsodeployer-nginx:0.25.1` - pobierają je skrypty serwera z paczki, nic nie budujesz |
 
 Uruchomiony serwer podaje swoją wersję pod `/api/health`.
 
@@ -24,6 +26,7 @@ Uruchomiony serwer podaje swoją wersję pod `/api/health`.
 
 | Dokument | O czym |
 |---|---|
+| [Instalacja serwera](docs/pl/server-setup.md) | **zacznij tutaj**: wymagania (minimalne / zalecane), porty, instalacja krok po kroku na Linuksie albo Windows (Docker Desktop), certyfikat TLS (samopodpisany albo PFX), klucze, foldery i wolumeny, kopia, pierwsze logowanie jako `admin` |
 | [Instalacja](docs/pl/installation.md) | krok po kroku: serwer, stanowisko administratora, treść, agent domenowy, nośnik, pierwsza VM |
 | [Serwer i konsola WWW](docs/server.md) (EN) | skrypty serwera, TLS, logowanie do konsoli (Workspace ONE Access / Entra ID), REST API Workspace ONE UEM |
 | [Cloud Connector](docs/pl/connector.md) | usługa Windows w domenie: Offline Domain Join, konta komputerów |
@@ -38,7 +41,10 @@ Nazwy domen, kont i serwerów w dokumentacji są przykładowe.
 
 ## Wymagania w skrócie
 
-- Serwer: Docker (Linux albo Windows z kontenerami Linux); ok. 6 GB dysku na każdy obraz i język Windows w kopii LAN.
+Szczegóły, rozmiary minimalne i zalecane: [instalacja serwera](docs/pl/server-setup.md).
+
+- Serwer: Linux z Docker Engine albo Windows 10/11 z Docker Desktop (kontenery Linux); 2-4 vCPU, 4-8 GB RAM,
+  40-100 GB dysku plus ok. 6 GB na każdy obraz i język Windows trzymany w LAN.
 - Stanowisko administratora: Windows 10/11 albo Server, PowerShell 5.1, Windows ADK + dodatek WinPE (instaluje je skrypt).
 - Domena: serwer Windows w domenie dla konektora (Offline Domain Join).
 - Workspace ONE UEM: adres Device Services, Group ID, konto staging; opcjonalnie klient OAuth REST API.

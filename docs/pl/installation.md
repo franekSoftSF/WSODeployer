@@ -68,6 +68,7 @@ albo z subskrypcji Visual Studio.
 - `secrets-dev\local-admin.txt` – użytkownik `admin` i jego hasło do konsoli webowej (skrypt wypisuje je też na końcu).
 
 ## 1. Serwer
+Krok po kroku z wymaganiami, certyfikatem TLS, kluczami, wolumenami i kopią: [server-setup.md](server-setup.md). W skrócie:
 `server\scripts\run-windows.ps1 [-Dev]` albo `run-linux.sh [--dev]`, opis w [server/README.md](../server.md). Z paczki
 wydania skrypty pobierają wydane obrazy (`docker compose pull`), w klonie repozytorium je budują. Skrypt zawsze tworzy administratora konsoli
 `admin` i na końcu wypisuje jego hasło. Zaloguj się nim na `https://<serwer>/console` i skonfiguruj logowanie
